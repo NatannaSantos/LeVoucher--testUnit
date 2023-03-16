@@ -12,7 +12,6 @@ export interface VoucherApplyData {
 
 async function createVoucher(code: string, discount: number) {
   const voucher = await voucherRepository.getVoucherByCode(code);
-  console.log(voucher);
     if (voucher) {
     throw conflictError("Voucher already exist.");
   }
